@@ -167,9 +167,9 @@ def survivor():
     # castaways_data = []
     # castaways_dict = dict(zip())
     list_of_list = list(zip(name_text, age, age_group))
-    castaways_d = {}
-    for (k,v) in zip(keys, list_of_list):
-        castaways_d[k] = v
+    castaways_d = dict(zip(keys, list_of_list))
+    # for (k,v) in zip(keys, list_of_list):
+    #     castaways_d[k] = v
 
     return jsonify(castaways_d)
 
