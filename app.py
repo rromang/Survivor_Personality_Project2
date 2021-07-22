@@ -171,7 +171,7 @@ def survivor():
     for (k,v) in zip(keys, list_of_list):
         castaways_d[k] = v
 
-    return jsonify(castaways_data)
+    return jsonify(castaways_d)
 
 
 
