@@ -9,7 +9,7 @@
 
 # import pandas as pd
 # import matplotlib.pyplot as plt
-# from config2 import username, password
+from config2 import username, password
 # from sqlalchemy import create_engine
 # import numpy as np
 # import datetime as dt
@@ -17,7 +17,7 @@
 # import sqlalchemy
 # from sqlalchemy.ext.automap import automap_base
 # from sqlalchemy.orm import Session
-# from sqlalchemy import create_engine, func, inspect
+from sqlalchemy import create_engine, func, inspect
 # # Import flask, jsonify
 # from flask import Flask, jsonify
 # from sqlalchemy.ext.declarative import declarative_base
@@ -25,9 +25,9 @@
 
 
 
-# database_path = f"{username}:{password}@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv"
-# engine = create_engine(f'postgresql://{database_path}')
-# connection = engine.connect()
+database_path = f"{username}:{password}@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv"
+engine = create_engine(f'postgresql://{database_path}')
+connection = engine.connect()
 # Base.metadata.create_all(engine)
 
 # castaways = pd.read_sql('select * from "Castaways"', connection)
@@ -177,9 +177,9 @@ def home():
 
 @app.route("/api/castaways.json")
 def survivor():
-    castaways_df = pd.read_sql("SELECT * FROM 'Castaways'")
+    castaways_df = pd.read_sql("SELECT * FROM 'Castaways'", connection)
     jsoncast = castaways_df.to_json(orient='records')
-    print(jsoncast)
+    # print(jsoncast)
 
-    return jsonify(castaways_d)
+    return jsonify(jsoncast)
 
