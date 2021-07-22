@@ -128,7 +128,7 @@ def home():
 @app.route("/api/castaways.json")
 def watched():
     results = db.session.query(castaways.full_name, castaways.age, castaways.personality_name).all()
-    results = db.session.query(castaways.age)
+    # results = db.session.query(castaways.age)
 
     name_text = [result[0] for result in results]
     age = [result[1] for result in results]
