@@ -19,75 +19,108 @@
 
 <body>
   <!--Navbar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Survivor</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Plots
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="temp.html">Personality Types Word Cloud</a></li>
-                <li><a class="dropdown-item" href="humidity.html">Personality Types vs Outcome</a></li>
-                <li><a class="dropdown-item" href="cloudiness.html">Age Groups vs Outcome</a></li>
-                <li><a class="dropdown-item" href="windspeed.html">Castaway Home State</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-06-01/castaways.csv" target="_blank">Data Source</a>
-            </li>  
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Survivor</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Plots
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="temp.html">Personality Types Word Cloud</a></li>
+              <li><a class="dropdown-item" href="humidity.html">Personality Types vs Outcome</a></li>
+              <li><a class="dropdown-item" href="cloudiness.html">Age Groups vs Outcome</a></li>
+              <li><a class="dropdown-item" href="windspeed.html">Castaway Home State</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-06-01/castaways.csv" target="_blank">Data Source</a>
+          </li>  
       </div>
-    </nav>
+    </div>
+  </nav>
 
   <!-- Summary and Visualizations-->
+  
   <div class="container content">    
     <div class="row">
-        <div class="col-md-8">
-            <div class="col-md-12">
-                <h4>Personalities, Ages, Outcomes & Home States</h4>
-                <hr>
-                <div class="clearfix"> 
-                    <img class="img-fluid" src="https://tvseriesfinale.com/wp-content/uploads/2017/05/survivor-cbs-tv-show.png" alt="survivor-cbs-tv-show">
-                    <p>We examined data collected from the popular reality competition television show, Survivor. The dataset we chose is related to ‘Castaways’ (contestants, players, or survivors), and contains interesting information about each castaway such as age, Meyers Briggs personality type, home city/state, and their final result on the show. Final result includes when a Castaway was voted off (e.g. 1st voted off), Sole Survivor (the winner), Runner Up, and less frequent results such as Quit, Eliminated, and Medically Evacuated.</p>
-                </div>
-            </div>
+      <div class="col-md-8">
+        <div class="col-md-12">
+          <h4>Personalities, Ages, Outcomes & Home States</h4>
+            <hr>
+              <div class="clearfix"> 
+                <img class="img-fluid" src="https://tvseriesfinale.com/wp-content/uploads/2017/05/survivor-cbs-tv-show.png" alt="survivor-cbs-tv-show">
+                <p>We examined data collected from the popular reality competition television show, Survivor. The dataset we chose is related to ‘Castaways’ (contestants, players, or survivors), and contains interesting information about each castaway such as age, Meyers Briggs personality type, home city/state, and their final result on the show. Final result includes when a Castaway was voted off (e.g. 1st voted off), Sole Survivor (the winner), Runner Up, and less frequent results such as Quit, Eliminated, and Medically Evacuated.</p>
+              </div>
         </div>
+      </div>
 
-        <!--Visualizations-->
-        <div class="col-md-4">
-            <div class="col-md-12">
-                <h4>Visualizations</h4>
-                <hr>
-                <div class="row">
-                    <div class="col-3 col-md-6">
-                        <a href="temp.html"><img src="Resources/assets/images/Fig1.png" width="100%"  alt="word-cloud">
-                        </a> 
-                    </div>
-                    <div class="col-3 col-md-6">
-                        <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="100%" alt="personality-win-lose"></a>
-                    </div>
-               
-                    <div class="col-3 col-md-6">
-                        <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="100%"  alt="age-win-lose"></a>
-                    </div>
-
-                    <div class="col-3 col-md-6">
-                        <a href="windspeed.html"><img src="Resources/assets/images/Fig4.png" width="100%"  alt="home-state"></a>
-                    </div>
+      <!--Visualizations-->
+      <div class="col-md-4">
+        <div class="col-md-12">
+          <h4>Visualizations</h4>
+            <hr>
+              <div class="row">
+                <div class="col-3 col-md-6">
+                  <a href="temp.html"><img src="Resources/assets/images/Fig1.png" width="100%"  alt="word-cloud"></a> 
                 </div>
-                <div class="row">
-                  <p><i>What are the most and least dominant personality types of Castaways? Of Sole Survivors and the 1st Voted Off? What are the age groups and home states of Castaways? These are the questions we attempted to answer through this project.</i></p>
+                <div class="col-3 col-md-6">
+                  <a href="humidity.html"><img src="Resources/assets/images/Fig2.png" width="100%" alt="personality-win-lose"></a>
                 </div>
-            </div>
+                <div class="col-3 col-md-6">
+                  <a href="cloudiness.html"><img src="Resources/assets/images/Fig3.png" width="100%"  alt="age-win-lose"></a>
+                </div>
+                <div class="col-3 col-md-6">
+                  <a href="windspeed.html"><img src="Resources/assets/images/Fig4.png" width="100%"  alt="home-state"></a>
+                </div>
+              </div>
+              <div class="row">
+                <p><i>What are the most and least dominant personality types of Castaways? Of Sole Survivors and the 1st Voted Off? What are the age groups and home states of Castaways? These are the questions we attempted to answer through this project.</i></p>
+              </div>
         </div>
+      </div>
     </div>
-</div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <div id="word-cloud">
+          <!--Word Cloud Here-->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <div id="personality-win-lose">
+          <!--Personality Win v Lose Chart Here-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <div id="age-win-lose">
+          <!--Age Group Win v Lose Chart Here-->
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="col-md-12">
+          <div id="home-state">
+          <!--Castaway Home State Chart Here-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
