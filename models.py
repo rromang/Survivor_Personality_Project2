@@ -23,4 +23,4 @@ def create_classes(db):
 
         def __repr__(self):
             return '<Castaways %r>' % (self.name)
-    return 
+    return Castaways_info
