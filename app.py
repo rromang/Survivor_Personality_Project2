@@ -177,7 +177,7 @@ def home():
 
 @app.route("/api/castaways.json")
 def survivor():
-    castaways_df = pd.read_sql("SELECT * FROM 'Castaways'", connection)
+    castaways_df = pd.read_sql('SELECT * FROM "Castaways"', connection)
     jsoncast = castaways_df.to_json(orient='records')
     # print(jsoncast)
 
