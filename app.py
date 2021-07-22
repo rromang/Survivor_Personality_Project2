@@ -181,5 +181,5 @@ def survivor():
     jsoncast = castaways_df.to_json(orient='records')
     # print(jsoncast)
 
-    return jsonify(jsoncast)
+    return jsoncast
 
