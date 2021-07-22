@@ -125,20 +125,51 @@ def home():
 
 #     return jsonify(castaway_data)
 
+# @app.route("/api/castaways.json")
+# def survivor():
+#     results = db.session.query(castaways.full_name, castaways.age, castaways.age_group, castaways.Lat, castaways.Lon, castaways.city, castaways.state,castaways.personality_type, castaways.personality_name, castaways.result,  castaways.immunity_idols_won,castaways.total_votes_received).all()
+#     # results = db.session.query(castaways.age)
+
+#     name_text = [result[0] for result in results]
+#     age = [result[1] for result in results]
+
+#     personality_name = [result[2] for result in results]
+
+#     castaways_data = [{
+#         "name": name_text,
+#         "age": age,
+#         "personality_name": personality_name
+#     }]
+
+#     return jsonify(castaways_data)
+
 @app.route("/api/castaways.json")
-def watched():
-    results = db.session.query(castaways.full_name, castaways.age, castaways.personality_name).all()
+def survivor():
+    results = db.session.query(castaways.full_name, castaways.age, castaways.age_group, castaways.Lat, castaways.Lon, castaways.city, castaways.state,castaways.personality_type, castaways.personality_name, castaways.result,  castaways.immunity_idols_won,castaways.total_votes_received).all()
     # results = db.session.query(castaways.age)
 
     name_text = [result[0] for result in results]
     age = [result[1] for result in results]
-    personality_name = [result[2] for result in results]
+    age_group = [result[2] for result in results]
+    lat = [result[3] for result in results]
+    lon = [result[4] for result in results]
+    city = [result[5] for result in results]
+    state = [result[6] for result in results]
+    personality_type = [result[7] for result in results]
+    personality_name = [result[8] for result in results]
+    survivor_result = [result[8] for result in results]
+    idols_won = [result[9] for result in results]
+    total_votes_received = [result[10] for result in results]
 
-    castaways_data = [{
-        "name": name_text,
-        "age": age,
-        "personality_name": personality_name
-    }]
+    castaways_data = []
+    
+    keys = ['name', 'age', 'age_group']
+    # castaways_data = []
+    # castaways_dict = dict(zip())
+    list_of_list = list(zip(name_text, age, age_group))
+    castaways_d = {}
+    for (k,v) in zip(keys, list_of_list):
+        castaways_d[k] = v
 
     return jsonify(castaways_data)
 
@@ -146,3 +177,8 @@ def watched():
 
 if __name__ == "__main__":
     app.run()
+
+
+#  result = db.Column(db.String(15))
+#         total_votes_received = db.Column(db.Integer)
+#         immunity_idols_won = db.Column(db.Integer)
