@@ -126,23 +126,23 @@ def home():
 
 #     return jsonify(castaway_data)
 
-@app.route("/api/castaways.json")
-def survivor():
-    results = db.session.query(castaways.full_name, castaways.age, castaways.age_group, castaways.Lat, castaways.Lon, castaways.city, castaways.state,castaways.personality_type, castaways.personality_name, castaways.result,  castaways.immunity_idols_won,castaways.total_votes_received).all()
-    # results = db.session.query(castaways.age)
+# @app.route("/api/castaways.json")
+# def survivor():
+#     results = db.session.query(castaways.full_name, castaways.age, castaways.age_group, castaways.Lat, castaways.Lon, castaways.city, castaways.state,castaways.personality_type, castaways.personality_name, castaways.result,  castaways.immunity_idols_won,castaways.total_votes_received).all()
+#     # results = db.session.query(castaways.age)
 
-    name_text = [result[0] for result in results]
-    age = [result[1] for result in results]
+#     name_text = [result[0] for result in results]
+#     age = [result[1] for result in results]
 
-    personality_name = [result[2] for result in results]
+#     personality_name = [result[2] for result in results]
 
-    castaways_data = [{
-        "name": name_text,
-        "age": age,
-        "personality_name": personality_name
-    }]
+#     castaways_data = [{
+#         "name": name_text,
+#         "age": age,
+#         "personality_name": personality_name
+#     }]
 
-    return jsonify(castaways_data, orient='records')
+#     return jsonify(castaways_data)
 
 # @app.route("/api/castaways.json")
 # def survivor():
@@ -175,10 +175,11 @@ def survivor():
 
 #     return jsonify(castaways_d)
 
-# @app.route("/api/castaways.json")
-# def survivor():
-#     castaways_df = pd.read_sql("SELECT * FROM 'Castaways'")
+@app.route("/api/castaways.json")
+def survivor():
+    castaways_df = pd.read_sql("SELECT * FROM 'Castaways'")
+    jsoncast = castaways_df.to_json(orient='records')
+    print(jsoncast)
 
-
-#     return jsonify(castaways_d)
+    return jsonify(castaways_d)
 
