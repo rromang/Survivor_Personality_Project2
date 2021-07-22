@@ -59,7 +59,7 @@ personality_name = session.query(Castaways.personality_name).all()
 result = session.query(Castaways.result).all()
 total_votes_received = session.query(Castaways.total_votes_received).all()
 immunity_idols_won = session.query(Castaways.immunity_idols_won).all()
-print(age[0])
+# print(age[0])
 # # Setup Flask app
 app = Flask(__name__)
 
