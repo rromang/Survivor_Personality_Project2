@@ -142,7 +142,7 @@ def survivor():
         "personality_name": personality_name
     }]
 
-    return jsonify(castaways_data, orient='columns')
+    return jsonify(castaways_data, orient='records')
 
 # @app.route("/api/castaways.json")
 # def survivor():
