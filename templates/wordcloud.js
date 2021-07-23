@@ -4,19 +4,16 @@
 // List of words
 var myWords = [];
 var myWordsSize = [];
-d3.json("castaways.json", function(error, data) {
-    // console.log(data);
-    var words = d3.set(data.map(function(d) { return d.personality_name; })).values();
-    // console.log(words);
-    // var size = words.keys(counts);
-    // myWordsSize.push(size);
-    for (i = 1; i < 16; i++) {
-      // console.log(words[i]);
-    myWords.push(words[i])};
-    // var unique = d3.set(personality_names).values();
-    // console.log(unique)
-console.log(myWords);
-// console.log(myWordsSize);
+d3.json("castaways.json", function(error, d) {
+    console.log(d.personality_name);
+    // for (var i = 0; i < d.length; i++) {
+    //   // Set the data location property to a variable
+    //   var word = d[i].personality_name;
+    //   console.log(word);
+    //   myWords.push(word);
+    // }  
+
+// console.log(myWords);
 
 
 
