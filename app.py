@@ -89,6 +89,6 @@ def survivor():
         castaway_dict["total_votes_received"] = result.total_votes_received
         castaway_dict["immunity_idols_won"] = result.immunity_idols_won
         all_castaways.append(castaway_dict)
-    json_castaways = {"data": {"castaways": all_castaways}}
+    json_castaways = {"castaways": all_castaways}
 
     return jsonify(json_castaways)
