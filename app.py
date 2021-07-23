@@ -56,10 +56,39 @@ def home():
 
 
 @app.route("/api/castaways.json")
-def survivor():
-    castaways_df = pd.read_sql('SELECT * FROM "Castaways"', connection)
-    jsoncast = castaways_df.to_json(orient='records')
+# def survivor():
+    # castaways_df = pd.read_sql('SELECT * FROM "Castaways"', connection)
+    # jsoncast = castaways_df.to_json(orient='records')
     # print(jsoncast)
 
-    return jsoncast
+    # return jsoncast
 
+    
+def survivor():
+    
+    # Query all columns in class
+    results = db.session.query(castaways).all()
+    all_castaways = []
+    # Loop through all records and add to dict
+    for result in results:
+        castaway_dict = {}
+        castaway_dict["id"] = result.id
+        castaway_dict["season_name"] = result.season_name
+        castaway_dict["season"] = result.season
+        castaway_dict["full_name"] = result.full_name
+        castaway_dict["castaway"] = result.castaway
+        castaway_dict["age"] = result.age
+        castaway_dict["age_group"] = result.age_group
+        castaway_dict["city"] = result.city
+        castaway_dict["state"] = result.state
+        castaway_dict["Lat"] = result.Lat
+        castaway_dict["Lon"] = result.Lon
+        castaway_dict["personality_type"] = result.personality_type
+        castaway_dict["personality_name"] = result.personality_name
+        castaway_dict["result"] = result.result
+        castaway_dict["total_votes_received"] = result.total_votes_received
+        castaway_dict["immunity_idols_won"] = result.immunity_idols_won
+        all_castaways.append(castaway_dict)
+    json_castaways = {"data": {"castaways": all_castaways}}
+
+    return jsonify(json_castaways)
