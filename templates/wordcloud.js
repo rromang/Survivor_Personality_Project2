@@ -8,32 +8,17 @@ d3.json("castaways.json", function(error, data) {
     // console.log(data);
     var words = d3.set(data.map(function(d) { return d.personality_name; })).values();
     // console.log(words);
+    // var size = words.keys(counts);
+    // myWordsSize.push(size);
     for (i = 1; i < 16; i++) {
       // console.log(words[i]);
     myWords.push(words[i])};
     // var unique = d3.set(personality_names).values();
     // console.log(unique)
-});
-
 console.log(myWords);
-var wordCount = [];
-d3.json("castaways.json", function(error, data) {
-var words = d3.set(data.map(function(d) { return d.personality_name; })).values();
-// wordToCount.push(words)
-for (var i=0; i < words.length; i++){
-  var currentWord = words[i];
-  for (var k=0; k < myWords.length; i++){
-    var counter = [];
-    var j = 0;
-    if (myWords[k] == currentWord[i]);
-    counter += 1
-  }
-  wordCount.push(counter)
-}
-});
-console.log(wordCount);
-// var myWordsSize = d3.count(wordToCount, d => +d);
 // console.log(myWordsSize);
+
+
 
 
 
@@ -79,3 +64,4 @@ function draw(words) {
         })
         .text(function(d) { return d.text; });
     }
+  });
