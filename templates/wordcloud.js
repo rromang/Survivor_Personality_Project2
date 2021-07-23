@@ -4,15 +4,9 @@
 // List of words
 var myWords = [];
 var myWordsSize = [];
-d3.json("castaways.json", function(error, d) {
-    console.log(d.personality_name);
-    // for (var i = 0; i < d.length; i++) {
-    //   // Set the data location property to a variable
-    //   var word = d[i].personality_name;
-    //   console.log(word);
-    //   myWords.push(word);
-    // }  
-
+d3.json("castaways.json", function(data) {
+    console.log(data);
+  
 // console.log(myWords);
 
 
