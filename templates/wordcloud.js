@@ -36,7 +36,7 @@ console.log(myWordsarr);
 
 
 var myWordsNew = [];
-var fillColor = ['#FFE105', '#FF9900', '#7CFC00', '#48D1CC', '#A7FC00', '#FF7518', '#FFD700', '#E41B17', '#00A693', '#DFFF00', '#99FFFF', '#F400A1', '#FF4F00', '#7515D4', '#FFAA00', '#FFFF00', '#3366FF'];
+var fill = d3.scale.category20();
 var myWordColors = ['#FFE105', '#FF9900', '#7CFC00', '#48D1CC', '#A7FC00', '#FF7518', '#FFD700', '#E41B17', '#00A693', '#DFFF00', '#99FFFF', '#F400A1', '#FF4F00', '#7515D4', '#FFAA00', '#FFFF00', '#3366FF'];
 for (var j = 1; j < myWordsarr.length; j++) {
   var addDict = {};
@@ -85,7 +85,7 @@ function draw(words) {
         .data(words)
       .enter().append("text")
         .style("font-size", function(d) { return d.size; })
-        .style("fill", function(d) { return d.color; })
+        .style("fill", function(d, i) { return fill(i); })
         .attr("text-anchor", "middle")
         .style("font-family", "Impact")
         .attr("transform", function(d) {
