@@ -70,6 +70,7 @@ var layout = d3.layout.cloud()
   .padding(5)        //space between words
   .rotate(function() { return ~~(Math.random() * 2) * 90; })
   .fontSize(function(d) { return d.size; })      // font size of words
+  // .style("font-size", function(d) { return Math.min(2 * r, (2 * r - 8) / this.getComputedTextLength() * 24) + "px"; })
   .on("end", draw);
 layout.start();
 
