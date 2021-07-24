@@ -93,3 +93,6 @@ def survivor():
     json_castaways = {"castaways": all_castaways}
 
     return jsonify(json_castaways)
+
+if __name__ == "__main__":
+    app.run()
