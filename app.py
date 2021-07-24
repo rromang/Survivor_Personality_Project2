@@ -67,6 +67,7 @@ def home():
 def survivor():
     
     # Query all columns in class
+
     results = db.session.query(castaways).all()
     all_castaways = []
     # Loop through all records and add to dict
@@ -85,7 +86,8 @@ def survivor():
         castaway_dict["Lon"] = result.Lon
         castaway_dict["personality_type"] = result.personality_type
         castaway_dict["personality_name"] = result.personality_name
-        castaway_dict["order"] = result.order
+        # castaway_dict["day"] = result.day
+        # castaway_dict["order"] = result.order
         castaway_dict["result"] = result.result
         castaway_dict["total_votes_received"] = result.total_votes_received
         castaway_dict["immunity_idols_won"] = result.immunity_idols_won
