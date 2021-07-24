@@ -36,7 +36,7 @@ console.log(myWordsarr);
 
 
 var myWordsNew = [];
-var fillColor = ['#FFE105', '#FF9900', '#7CFC00', '#48D1CC', '#A7FC00', '#FF7518', '#FFD700', '#E41B17', '#00A693', '#DFFF00', '#99FFFF', '#F400A1', '#FF4F00', '#7515D4', '#FFAA00', '#FFFF00', '#3366FF'];
+var fill = d3.scale.category20();
 var myWordColors = ['#FFE105', '#FF9900', '#7CFC00', '#48D1CC', '#A7FC00', '#FF7518', '#FFD700', '#E41B17', '#00A693', '#DFFF00', '#99FFFF', '#F400A1', '#FF4F00', '#7515D4', '#FFAA00', '#FFFF00', '#3366FF'];
 for (var j = 1; j < myWordsarr.length; j++) {
   var addDict = {};
@@ -55,7 +55,7 @@ var margin = {top: 10, right: 10, bottom: 10, left: 10},
     height = 450 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz").append("svg")
+var svg = d3.select("#word-cloud").append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
   .append("g")
@@ -70,6 +70,7 @@ var layout = d3.layout.cloud()
   .padding(5)        //space between words
   .rotate(function() { return ~~(Math.random() * 2) * 90; })
   .fontSize(function(d) { return d.size; })      // font size of words
+  // .style("font-size", function(d) { return Math.min(2 * r, (2 * r - 8) / this.getComputedTextLength() * 24) + "px"; })
   .on("end", draw);
 layout.start();
 
@@ -84,7 +85,7 @@ function draw(words) {
         .data(words)
       .enter().append("text")
         .style("font-size", function(d) { return d.size; })
-        .style("fill", function(d) { return d.color; })
+        .style("fill", function(d, i) { return fill(i); })
         .attr("text-anchor", "middle")
         .style("font-family", "Impact")
         .attr("transform", function(d) {
