@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // var allWords = [];
 // var myWordsSize = [];
 // d3.json("https://survivor-project2.herokuapp.com/api/castaways.json", function(data) {
@@ -20,6 +21,8 @@
   
 // console.log(allWords);
 
+=======
+>>>>>>> parent of e239e23 (changes to index and app)
 =======
 >>>>>>> parent of e239e23 (changes to index and app)
 =======
@@ -44,7 +47,11 @@ d3.json("castaways.json", function(data) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 // console.log(allWords);
+=======
+console.log(allWords);
+>>>>>>> parent of e239e23 (changes to index and app)
 =======
 console.log(allWords);
 >>>>>>> parent of e239e23 (changes to index and app)
