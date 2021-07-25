@@ -128,84 +128,73 @@ d3.json("api/castaways.json", function(data) {
     console.log(loser_personality_x);
     console.log(loser_personality_y);
     
-    var data = [
-      {
-        x: agegroup_x,
-        y: agegroup_y,
-        type: 'bar',
-        name: 'Age Groups'
-      },
-      {
-        x: personality_x,
-        y: personality_y,
-        type: 'bar',
-        name: 'Personality Types'
-      }
-    ];
+    
+// Age Graph
+    var trace1 = {
+      x: agegroup_x,
+      y: agegroup_y,
+      name: 'All Contestants',
+      type: 'bar'
+    };
+    
+    var trace2 = {
+      x: winner_agegroup_x,
+      y: winner_agegroup_y,
+      name: 'Sole Survivors',
+      type: 'bar'
+    };
 
-    var high_annotations = [
-      {
-        x: agegroup_x,
-        y: agegroup_y,
-        // yref: 'y', xref: 'x',
-      }
-  ]
-  
-  var low_annotations = [{
+    var trace3 = {
+      x: loser_agegroup_x,
+      y: loser_agegroup_y,
+      name: 'First Voted Off',
+      type: 'bar'
+    };
+    
+    var data = [trace1, trace2, trace3];
+    
+    var layout = {
+      barmode: 'group',
+      autosize: true,
+      title: "Age Groups of Surviors",
+      width: 1000,
+      height: 500
+    };
+    
+    var trace4 = {
       x: personality_x,
       y: personality_y,
-        // yref: 'y', xref: 'x',
-        // ay: 40, ax: 0
-      }
-   ]
+      name: 'All Contestants',
+      type: 'bar'
+    };
 
-    var button_layer_2_height = 1.2
+    var trace5 = {
+      x: winner_personality_x,
+      y: winner_personality_y,
+      name: 'Sole Survivors',
+      type: 'bar'
+    };
 
-    var updatemenus=[
-      {
-          buttons: [
-              {
-                  args: [{'visible': [true, true, false, false]},
-                         {'title': 'Yahoo High',
-                          'annotations': high_annotations}],
-                  label: 'High',
-                  method: 'update'
-              },
-              {
-                  args: [{'visible': [false, false, true, true,]},
-                         {'title': 'Yahoo Low',
-                          'annotations': low_annotations}],
-                  label: 'Low',
-                  method: 'update'
-              },
-              {
-                  args: [{'visible': [true, false, true, false,]},
-                         {'title': 'Yahoo',
-                          'annotations': []}],
-                  label: 'Reset',
-                  method: 'update'
-              },
-  
-          ],
-          direction: 'left',
-          pad: {'r': 10, 't': 10},
-          showactive: true,
-          type: 'buttons',
-          x: 0.1,
-          xanchor: 'left',
-          y: button_layer_2_height,
-          yanchor: 'top'
-      },
-  
-  ]
+    var trace6 = {
+      x: loser_personality_x,
+      y: loser_personality_y,
+      name: 'First Voted Off',
+      type: 'bar'
+    };
 
-  var layout = {
-    titel: 'Age and Personality Type Distribution',
-    updatemenus: updatemenus,
-  }
+    var data2 = [trace4, trace5, trace6];
 
-    
-    Plotly.newPlot('myDiv', data, layout);
+    var layout2 = {
+      barmode: 'group',
+      autosize: true,
+      title: "Personality Types of Survivors",
+      xaxis: {tickangle: -45},
+      width: 1000,
+      height: 500
+    };
+
+    Plotly.newPlot('age-win-lose', data, layout);
+    Plotly.newPlot('personality-win-lose', data2, layout2);
 
    
 });
