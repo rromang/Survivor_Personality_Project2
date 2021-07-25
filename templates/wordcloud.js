@@ -1,9 +1,9 @@
 
 // from: https://www.d3-graph-gallery.com/graph/wordcloud_size.html
-var url = "/api/castaways.json";
-d3.json(url, function (response) {
-    console.log(response)
-});
+// var url = "https://survivor-project2.herokuapp.com/api/castaways.json";
+// d3.json(url, function (data) {
+//     console.log(data)
+// });
 // List of words
 // var allWords = [];
 // var myWordsSize = [];
@@ -65,20 +65,11 @@ d3.json(url, function (response) {
 //     .attr("transform",
 //           "translate(" + margin.left + "," + margin.top + ")");
 
-// // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
-// // Wordcloud features that are different from one word to the other must be here
-// var layout = d3.layout.cloud()
-//   .size([width, height])
-//   .words(myWordsNew.map(function(d) { return {text: d.word, size:d.size}; }))
-//   .padding(5)        //space between words
-//   .rotate(function() { return ~~(Math.random() * 2) * 90; })
-//   .fontSize(function(d) { return d.size; })      // font size of words
-//   // .style("font-size", function(d) { return Math.min(2 * r, (2 * r - 8) / this.getComputedTextLength() * 24) + "px"; })
-//   .on("end", draw);
-// layout.start();
+
+// var url = 'https://survivor-project2.herokuapp.com/api/castaways.json'
 var allWords = [];
 var myWordsSize = [];
-d3.json(url, function (response){
+d3.json('castaways.json', function (response){
     var data = response
     // console.log(data.castaways);
     var castaways = data.castaways;
