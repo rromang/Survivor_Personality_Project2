@@ -69,6 +69,7 @@
 // var url = 'https://survivor-project2.herokuapp.com/api/castaways.json'
 var allWords = [];
 var myWordsSize = [];
+// d3.json("/api/castaways.json", function(data)
 d3.json('castaways.json', function (response){
     var data = response
     // console.log(data.castaways);
