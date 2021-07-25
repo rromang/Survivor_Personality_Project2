@@ -1,11 +1,10 @@
 
 // from: https://www.d3-graph-gallery.com/graph/wordcloud_size.html
 
-// List of words
 var allWords = [];
 var myWordsSize = [];
-d3.json("castaways.json", function(data) {
-    // console.log(data.castaways);
+d3.json("https://survivor-project2.herokuapp.com/api/castaways.json", function(data) {
+    console.log(data);
     var castaways = data.castaways;
     // console.log(castaways);
     // var personality = castaways.personality_name;
@@ -17,6 +16,32 @@ d3.json("castaways.json", function(data) {
     }
   
 console.log(allWords);
+
+
+
+
+
+
+
+
+
+
+// // List of words
+// var allWords = [];
+// var myWordsSize = [];
+// d3.json("castaways.json", function(data) {
+//     // console.log(data.castaways);
+//     var castaways = data.castaways;
+//     // console.log(castaways);
+//     // var personality = castaways.personality_name;
+//     // console.log(personality);
+//     for (var i = 0; i < castaways.length; i++) {
+//      var personality = castaways[i].personality_name;
+//     //  console.log(personality);
+//      allWords.push(personality)
+//     }
+  
+// console.log(allWords);
 
 // followed example in: https://stackoverflow.com/questions/48435191/how-do-i-build-an-object-counting-occurrences-in-an-array-in-javascript
 var myWords = {};
