@@ -1,130 +1,211 @@
 // Get data from json 
 d3.json("api/castaways.json", function(data) {
-    // console.log(data);
+    console.log(data);
+   
+    // Group data by winners by age group
+    var castaway_agegroup_winners = d3.nest()
+      .key(function (data) {
+        if (data.result === "Sole Survivor") {
+          return data.age_group
+        }
+      })
+      .entries(data.castaways)
+      console.log(castaway_agegroup_winners);
+    
+      // group data by 1st voted out by age group
+    var castaway_agegroup_losers = d3.nest()
+      .key(function (data) {
+        if (data.result === "1st voted out") {
+          return data.age_group
+        } 
+      })
+      .entries(data.castaways)
+      console.log(castaway_agegroup_losers);
+
+    // group data by winners by personality
+    var castaway_personality_winners = d3.nest()
+      .key(function (data) {
+        if (data.result === "Sole Survivor") {
+        return data.personality_name
+        } 
+      })
+      .entries(data.castaways)
+      console.log(castaway_personality_winners);
+    
+    // group data by 1st voted out by personality
+      var castaway_personality_losers = d3.nest()
+      .key(function (data) {
+        if (data.result === "1st voted out") {
+        return data.personality_name
+        } 
+      })
+      .entries(data.castaways)
+      console.log(castaway_personality_losers);
+    
+    // Group all contestants by age group
     var castaway_agegroup = d3.nest()
       .key(function (data) {
         return data.age_group
       })
       .entries(data.castaways)
-      // console.log(castaway_agegroup);
+      console.log(castaway_agegroup);
+
+    // Group all contestants by personality type
+    var castaway_personality = d3.nest()
+      .key(function (data) {
+        return data.personality_name
+      })
+      .entries(data.castaways)
+      console.log(castaway_personality);
+
+    // Make variables for graphing
     var agegroup_x = [];
     var agegroup_y = [];
+    
+    var personality_x = [];
+    var personality_y = [];
+
+    var winner_agegroup_x = [];
+    var winner_agegroup_y = [];
+    
+    var winner_personality_x = [];
+    var winner_personality_y = [];
+    
+    var loser_agegroup_x = [];
+    var loser_agegroup_y = [];
+    
+    var loser_personality_x = [];
+    var loser_personality_y = [];
+// Variables for all contestants' age groups
     for (var i = 0; i < castaway_agegroup.length; i++) {
       agegroup_x.push(castaway_agegroup[i].key)
       agegroup_y.push(castaway_agegroup[i].values.length)
     }
+//variables for all contestants' personality types
+    for (var i = 0; i < castaway_personality.length; i++) {
+      personality_x.push(castaway_personality[i].key)
+      personality_y.push(castaway_personality[i].values.length)
+    }     
+// Variables for winner age group
+    for (var i = 0; i < castaway_agegroup_winners.length; i++) {
+      if (castaway_agegroup_winners[i].key != "undefined") {
+        winner_agegroup_x.push(castaway_agegroup_winners[i].key) 
+        winner_agegroup_y.push(castaway_agegroup_winners[i].values.length)
+      }
+    }
+// Variables for winner personality types
+  for (var i = 0; i < castaway_personality_winners.length; i++) {
+    if (castaway_personality_winners[i].key != "undefined") {
+      winner_personality_x.push(castaway_personality_winners[i].key)
+      winner_personality_y.push(castaway_personality_winners[i].values.length)
+    }
+  }  
+// Variables for loser age group
+  for (var i = 0; i < castaway_agegroup_losers.length; i++) {
+    if (castaway_agegroup_losers[i].key != "undefined") {
+      loser_agegroup_x.push(castaway_agegroup_losers[i].key)
+      loser_agegroup_y.push(castaway_agegroup_losers[i].values.length)
+    }
+  }
+  // Variables for loser personality types
+  for (var i = 0; i < castaway_personality_losers.length; i++) {
+    if (castaway_personality_losers[i].key != "undefined") {
+      loser_personality_x.push(castaway_personality_losers[i].key)
+      loser_personality_y.push(castaway_personality_losers[i].values.length)
+    }
+  }
+    
+    console.log(agegroup_x);
+    console.log(agegroup_y);
+    console.log(personality_x);
+    console.log(personality_y);
+    console.log(winner_agegroup_x);
+    console.log(winner_agegroup_y);
+    console.log(winner_personality_x);
+    console.log(winner_personality_y);
+    console.log(loser_agegroup_x);
+    console.log(loser_agegroup_y);
+    console.log(loser_personality_x);
+    console.log(loser_personality_y);
     
     var data = [
       {
         x: agegroup_x,
         y: agegroup_y,
-        type: 'bar'
+        type: 'bar',
+        name: 'Age Groups'
+      },
+      {
+        x: personality_x,
+        y: personality_y,
+        type: 'bar',
+        name: 'Personality Types'
       }
     ];
+
+    var high_annotations = [
+      {
+        x: agegroup_x,
+        y: agegroup_y,
+        // yref: 'y', xref: 'x',
+      }
+  ]
+  
+  var low_annotations = [{
+      x: personality_x,
+      y: personality_y,
+        // yref: 'y', xref: 'x',
+        // ay: 40, ax: 0
+      }
+   ]
+
+    var button_layer_2_height = 1.2
+
+    var updatemenus=[
+      {
+          buttons: [
+              {
+                  args: [{'visible': [true, true, false, false]},
+                         {'title': 'Yahoo High',
+                          'annotations': high_annotations}],
+                  label: 'High',
+                  method: 'update'
+              },
+              {
+                  args: [{'visible': [false, false, true, true,]},
+                         {'title': 'Yahoo Low',
+                          'annotations': low_annotations}],
+                  label: 'Low',
+                  method: 'update'
+              },
+              {
+                  args: [{'visible': [true, false, true, false,]},
+                         {'title': 'Yahoo',
+                          'annotations': []}],
+                  label: 'Reset',
+                  method: 'update'
+              },
+  
+          ],
+          direction: 'left',
+          pad: {'r': 10, 't': 10},
+          showactive: true,
+          type: 'buttons',
+          x: 0.1,
+          xanchor: 'left',
+          y: button_layer_2_height,
+          yanchor: 'top'
+      },
+  
+  ]
+
+  var layout = {
+    titel: 'Age and Personality Type Distribution',
+    updatemenus: updatemenus,
+  }
+
     
-    Plotly.newPlot('myDiv', data);
+    Plotly.newPlot('myDiv', data, layout);
 
-    console.log(agegroup_x);
-    console.log(agegroup_y);
-    // var castaways = data.castaways;
-
-    // age_group = castaways.age_group;
-    // console.log(age_group);
-    for (var i = 0; i < castaways.length; i++) {
-        var age_group = castaways[i].age_group;
-        agegroup.push(age_group)
-        var personality_name = castaways[i].personality_name;
-        personalities.push(personality_name);
-        var result = castaways[i].result;
-        results.push(result);
-        
-    }
-
-console.log(agegroup);
-console.log(personalities);
-console.log(results);
-// });
-
-// create 2 data_set
-
-var data1 = [
-    {group: agegroup, value: agegroup},
-    // {group: "B", value: 16},
-    // {group: "C", value: 8}
- ];
- 
-
- var data2 = [
-    {group: "A", value: 7},
-    {group: "B", value: 1},
-    {group: "C", value: 20},
-    {group: "D", value: 10}
- ];
- 
-
- // set the dimensions and margins of the graph
- var margin = {top: 30, right: 30, bottom: 70, left: 60},
-     width = 460 - margin.left - margin.right,
-     height = 400 - margin.top - margin.bottom;
- 
- // append the svg object to the body of the page
- var svg = d3.select("#age-win-lose")
-   .append("svg")
-     .attr("width", width + margin.left + margin.right)
-     .attr("height", height + margin.top + margin.bottom)
-   .append("g")
-     .attr("transform",
-           "translate(" + margin.left + "," + margin.top + ")");
-    
- 
- // Initialize the X axis
- var x = d3.scaleBand()
-   .range([ 0, width ])
-   .padding(0.2);
- var xAxis = svg.append("g")
-   .attr("transform", "translate(0," + height + ")")
- 
- // Initialize the Y axis
- var y = d3.scaleLinear()
-   .range([ height, 0]);
- var yAxis = svg.append("g")
-   .attr("class", "myYaxis")
- 
- 
- // A function that create / update the plot for a given variable:
- function update(data) {
- 
-   // Update the X axis
-   x.domain(data.map(function(d) { return d.group; }))
-   xAxis.call(d3.axisBottom(x))
- 
-   // Update the Y axis
-   y.domain([0, d3.max(data, function(d) { return d.value }) ]);
-   yAxis.transition().duration(1000).call(d3.axisLeft(y));
- 
-   // Create the u variable
-   var u = svg.selectAll("rect")
-     .data(data)
- 
-   u
-     .enter()
-     .append("rect") // Add a new rect for each new elements
-     .merge(u) // get the already existing elements as well
-     .transition() // and apply changes to all of them
-     .duration(1000)
-       .attr("x", function(d) { return x(d.group); })
-       .attr("y", function(d) { return y(d.value); })
-       .attr("width", x.bandwidth())
-       .attr("height", function(d) { return height - y(d.value); })
-       .attr("fill", "#69b3a2")
- 
-   // If less group in the new dataset, I delete the ones not in use anymore
-   u
-     .exit()
-     .remove()
- }
- 
- // Initialize the plot with the first dataset
- update(data1)
-
+   
 });
