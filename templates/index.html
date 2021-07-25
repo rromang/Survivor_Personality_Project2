@@ -14,7 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="static\css\bootstrap.css">
 
 
 </head>
@@ -94,7 +94,7 @@
   <hr>
   <div class="container">
     <div class="row">
-      <div class="col-md-9 ml-auto">
+      <div class="col-md-9">
         <h2>Individual Visualizations</h2>
         <h4>Word Cloud</h4>
         <div id="word-cloud">
@@ -109,20 +109,18 @@
           </div>
         </div>
       </div>
+    <div class="row">
       <div class="col-md-6">
         <div class="col-md-12">
-<<<<<<< HEAD
           <hr>
           <h3>Personality Type Background Info</h3>
             <hr>
-            <div class="row justify-content-md-left">
-              <div class="col-md-8">
-                <div class="pull-left"><img src="personality_types_graphic.png" alt="Personality categories"></div>
+            <div class="row justify-content-around">
+              <div class="col-md-6">
+                <div class="pull-left"><img src="static\js\personality_types_graphic.png" alt="Personality categories"></div>
                 </div>
-                <div class="row">
-                  <div class="col-lg-12">
-                <!-- <div class ="col-md-6"> -->
-                <!-- <br><br><br><br><br><br><br><br> -->
+                <div class ="col-md-6">
+                <br><br><br><br><br><br><br><br>
                 <div class="pull-right"><p class="ex1">There are 16 possible personality type outcomes from the Meyers Briggs test which are grouped into 4 overall categories: Analysts, Diplomats, Sentinels, and Explorers. All 16 types were represented in the contestants on Survivor. To explore more about all these personality types <a href="https://www.16personalities.com/personality-types" target="_blank">click here.</a> </p></div>
                 </div>
               </div>
@@ -137,10 +135,6 @@
               <p class="ex1">If you want to learn more about the Campainger personality type <a href="https://www.16personalities.com/enfp-personality" target="_blank">click here.</a></p>
               <p class="ex1">The Campaigner type was also the most common in those who were voted first to leave. However, amongst the winners, the Entrepreneur personality type was the most frequent. Again from 16Personalities.com, "an Entrepreneur (ESTP) is someone with the Extraverted, Observant, Thinking, and Prospecting personality traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, whether socializing with others or in more personal pursuits."</p>
               <p class="ex1">If you want to learn more about the Entrepreneur personality type <a href="https://www.16personalities.com/estp-personality" target="_blank">click here.</a></p>
-=======
-          <div id="personality-win-lose">
-          <!--Personality Win v Lose Chart Here-->
->>>>>>> parent of 542edd0 (update index, css, and age_graph)
           </div>
         </div>
       </div>
@@ -148,15 +142,17 @@
     <div class="row">
       <div class="col-md-6">
         <div class="col-md-12">
-          <div id="age-win-lose">
-            <div id="myDiv"></div>
+          <hr>
+          <h3>Age Analysis</h3>
+            <hr>
+            <div id="age-win-lose">
             <!--Age Group Win v Lose Chart Here-->
-              <button onclick="update(data1)">Variable 1</button>
-              <button onclick="update(data2)">Variable 2</button>
-              <hr>
+            <hr>
+            <p class="ex1">The majority of contesants were between the ages of 26 and 35. It is not surprising that this was also the most frequent age group of the Sole Survivors. There has only been 1 contestant older than 46 to win and they were actually in the 56-65 age group. No one between the ages of 46-55 or over 65 have won the show throughout the impressive 40 seasons that it has been running.</p>
           </div>
         </div>
       </div>
+    </div>
       <div class="col-md-6">
         <div class="col-md-12">
           <div id="home-state">
