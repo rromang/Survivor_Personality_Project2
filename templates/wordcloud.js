@@ -1,6 +1,7 @@
 
 // from: https://www.d3-graph-gallery.com/graph/wordcloud_size.html
 
+<<<<<<< HEAD
 // var allWords = [];
 // var myWordsSize = [];
 // d3.json("https://survivor-project2.herokuapp.com/api/castaways.json", function(data) {
@@ -17,6 +18,8 @@
   
 // console.log(allWords);
 
+=======
+>>>>>>> parent of e239e23 (changes to index and app)
 // List of words
 var allWords = [];
 var myWordsSize = [];
@@ -32,7 +35,11 @@ d3.json("castaways.json", function(data) {
      allWords.push(personality)
     }
   
+<<<<<<< HEAD
 // console.log(allWords);
+=======
+console.log(allWords);
+>>>>>>> parent of e239e23 (changes to index and app)
 
 // followed example in: https://stackoverflow.com/questions/48435191/how-do-i-build-an-object-counting-occurrences-in-an-array-in-javascript
 var myWords = {};
