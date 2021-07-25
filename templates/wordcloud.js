@@ -2,6 +2,7 @@
 // from: https://www.d3-graph-gallery.com/graph/wordcloud_size.html
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // var allWords = [];
 // var myWordsSize = [];
 // d3.json("https://survivor-project2.herokuapp.com/api/castaways.json", function(data) {
@@ -20,6 +21,8 @@
 
 =======
 >>>>>>> parent of e239e23 (changes to index and app)
+=======
+>>>>>>> parent of e239e23 (changes to index and app)
 // List of words
 var allWords = [];
 var myWordsSize = [];
@@ -36,7 +39,11 @@ d3.json("castaways.json", function(data) {
     }
   
 <<<<<<< HEAD
+<<<<<<< HEAD
 // console.log(allWords);
+=======
+console.log(allWords);
+>>>>>>> parent of e239e23 (changes to index and app)
 =======
 console.log(allWords);
 >>>>>>> parent of e239e23 (changes to index and app)
