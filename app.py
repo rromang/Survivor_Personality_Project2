@@ -34,8 +34,8 @@ app = Flask(__name__)
 
 from flask_sqlalchemy import SQLAlchemy
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://waljilkidydguz:689b06ad421784ad4ea17abfa4d649ffe291a27c691edc52169cf33b166ffc3e@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1)
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://waljilkidydguz:689b06ad421784ad4ea17abfa4d649ffe291a27c691edc52169cf33b166ffc3e@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv'
 
 
 # Remove tracking modifications
