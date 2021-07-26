@@ -21,9 +21,6 @@
   <!-- Plotly -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   
-  <!-- JSON -->
-  <script src="api/castaways.json"></script>
-  
   <!--Navbar-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
@@ -136,6 +133,12 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
+<!-- JSON -->
+<script src="api/castaways.json"></script>
+    
+<script src="{{ url_for('static', filename='js/wordcloud.js') }}"></script>
+<script src="{{ url_for('static', filename='js/age_graph.js') }}"></script>
+    
 </body>
 </html>
 
