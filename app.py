@@ -35,7 +35,7 @@ app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '').replace("://", "ql://", 1)
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://waljilkidydguz:689b06ad421784ad4ea17abfa4d649ffe291a27c691edc52169cf33b166ffc3e@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://waljilkidydguz:689b06ad421784ad4ea17abfa4d649ffe291a27c691edc52169cf33b166ffc3e@ec2-52-45-179-101.compute-1.amazonaws.com:5432/d52f4bpmrc2lpv'
 
 
 # Remove tracking modifications
@@ -47,23 +47,15 @@ castaways = create_classes(db)
 ########################
 
 
+if __name__ == "__main__":
+    app.run()
 
 # # create route that renders index.html template
 @app.route("/")
 def home():
     return render_template("index.html")
 
-
-
 @app.route("/api/castaways.json")
-# def survivor():
-    # castaways_df = pd.read_sql('SELECT * FROM "Castaways"', connection)
-    # jsoncast = castaways_df.to_json(orient='records')
-    # print(jsoncast)
-
-    # return jsoncast
-
-    
 def survivor():
     
     # Query all columns in class
@@ -96,5 +88,5 @@ def survivor():
 
     return jsonify(json_castaways)
 
-if __name__ == "__main__":
-    app.run()
+# if __name__ == "__main__":
+#     app.run()

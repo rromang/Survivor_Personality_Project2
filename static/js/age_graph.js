@@ -1,7 +1,7 @@
+
 // Get data from json 
 // d3.json("/api/castaways.json", function(data)
-d3.json("castaways.json", function(data) {
-    // console.log(data);
+d3.json("api/castaways.json").then((data) => {
    
     // Group data by winners by age group
     var castaway_agegroup_winners = d3.nest()
@@ -195,7 +195,7 @@ d3.json("castaways.json", function(data) {
     };
 
     Plotly.newPlot('age-win-lose', data, layout);
-    Plotly.newPlot('personality-win-lose', data2, layout2);
+     Plotly.newPlot('personality-win-lose', data2, layout2);
 
    
 });
