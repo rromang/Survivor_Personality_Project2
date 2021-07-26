@@ -34,7 +34,7 @@
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Plots
+              Visualizations
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <li><a class="dropdown-item" href="#word-cloud">Personality Types Word Cloud</a></li>
@@ -69,7 +69,7 @@
         <!--Visualizations-->
         <div class="col-md-4">
             <div class="col-md-12">
-                <h4>Visualizations</h4>
+                <h4>Charts & Information</h4>
                 <hr>
                 <div class="row">
                   <div class="d-grid gap-2">
@@ -77,7 +77,7 @@
                     <a class="btn btn-primary btn-outline" href="#personality-type" role="button">Personality Types</a>
                     <a class="btn btn-primary btn-outline" href="#personality-win-lose" role="button">Personality Analysis</a>
                     <a class="btn btn-primary btn-outline" href="#age-win-lose" role="button">Age Analysis</a>
-                    <a class="btn btn-primary btn-outline" href="#map" role="button">Home State</a>
+                    <a class="btn btn-primary btn-outline" href="/map_survivor.html" role="button">Home State</a>
                   </div>
                 </div>
             </div>
@@ -96,83 +96,59 @@
         <hr>
         <div id="word-cloud">
         <script src= "wordcloud.js" width="100%"  alt="word-cloud"></script>
-      </div>
-        <!-- <div class="col-md-12"> -->
-          <!-- <h2>Individual Visualizations</h2> -->
-          <!-- <h4>Word Cloud</h4>
-          <div id="word-cloud">
-          <script src= "wordcloud.js" width="100%"  alt="word-cloud"></script>
-        </div> -->
-          </div>
-        </div>
-      </div>
-      <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="col-md-12">
-          <hr>
-          <div id='personality-type'>
-          <h3>Personality Type Background Info</h3>
-            <hr>
-            <div class="row">
-              <div class="col-md-9">
-                <div class="pull-left"><img src="personality_types_graphic.png" alt="Personality categories"></div>
-                </div>
-                <div class ="col-md-12">
-                <!-- <br><br><br><br><br><br><br><br> -->
-                <div class="pull-right"><p class="ex1">There are 16 possible personality type outcomes from the Meyers Briggs test which are grouped into 4 overall categories: Analysts, Diplomats, Sentinels, and Explorers. All 16 types were represented in the contestants on Survivor. To explore more about all these personality types <a href="https://www.16personalities.com/personality-types" target="_blank">click here.</a> </p></div>
-                </div>
-              </div>
-            </div>
-            </div>
-            <hr>
-            <h3>Personality Analysis</h3>
-            <hr>
-            <div id="personality-win-lose">
-            <!--Personality Win v Lose Chart Here-->
-            <hr>
-              <p class="ex1">The most common personality type amongst all contestants was the Campaigner. Acoording to 16Personalities.com, "a Campaigner (ENFP) is someone with the Extraverted, Intuitive, Feeling, and Prospecting personality traits. These people tend to embrace big ideas and actions that reflect their sense of hope and goodwill toward others. Their vibrant energy can flow in many directions."</p>
-              <p class="ex1">If you want to learn more about the Campainger personality type <a href="https://www.16personalities.com/enfp-personality" target="_blank">click here.</a></p>
-              <p class="ex1">The Campaigner type was also the most common in those who were voted first to leave. However, amongst the winners, the Entrepreneur personality type was the most frequent. Again from 16Personalities.com, "an Entrepreneur (ESTP) is someone with the Extraverted, Observant, Thinking, and Prospecting personality traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, whether socializing with others or in more personal pursuits."</p>
-              <p class="ex1">If you want to learn more about the Entrepreneur personality type <a href="https://www.16personalities.com/estp-personality" target="_blank">click here.</a></p>
-          </div>
         </div>
       </div>
     </div>
-    </div>
-    <div class = "container">
     <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-8 ">
-          <hr>
-          <h3>Age Analysis</h3>
-            <hr>
-            <div id="age-win-lose">
-            <!--Age Group Win v Lose Chart Here-->
-            <hr>
-            <p class="ex1">The majority of contesants were between the ages of 26 and 35. It is not surprising that this was also the most frequent age group of the Sole Survivors. There has only been 1 contestant older than 46 to win and they were actually in the 56-65 age group. No one between the ages of 46-55 or over 65 have won the show throughout the impressive 40 seasons that it has been running.</p>
-          </div>
+      <div class="col-md-9">
+        <hr>
+        <div id="personality-type">
+        <h3>Personality Type Background Info</h3>
+        <hr>
+        <img src="/personality_types_graphic.png" class="rounded float-start" alt="Personality categories">
+        <p class="ex1">There are 16 possible personality type outcomes from the Meyers Briggs test which are grouped into 4 overall categories: Analysts, Diplomats, Sentinels, and Explorers. All 16 types were represented in the contestants on Survivor. To explore more about all these personality types <a href="https://www.16personalities.com/personality-types" target="_blank">click here.</a> </p></div>
         </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <hr>
+        <h3>Personality Analysis</h3>
+        <hr>
+        <div id="personality-win-lose">
+        <!--Personality Win v Lose Chart Here-->
+        <hr>
+        <p class="ex1">The most common personality type amongst all contestants was the Campaigner. Acoording to 16Personalities.com, "a Campaigner (ENFP) is someone with the Extraverted, Intuitive, Feeling, and Prospecting personality traits. These people tend to embrace big ideas and actions that reflect their sense of hope and goodwill toward others. Their vibrant energy can flow in many directions."</p>
+        <p class="ex1">If you want to learn more about the Campainger personality type <a href="https://www.16personalities.com/enfp-personality" target="_blank">click here.</a></p>
+        <p class="ex1">The Campaigner type was also the most common in those who were voted first to leave. However, amongst the winners, the Entrepreneur personality type was the most frequent. Again from 16Personalities.com, "an Entrepreneur (ESTP) is someone with the Extraverted, Observant, Thinking, and Prospecting personality traits. They tend to be energetic and action-oriented, deftly navigating whatever is in front of them. They love uncovering life’s opportunities, whether socializing with others or in more personal pursuits."</p>
+        <p class="ex1">If you want to learn more about the Entrepreneur personality type <a href="https://www.16personalities.com/estp-personality" target="_blank">click here.</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <hr>
+        <h3>Age Analysis</h3>
+        <hr>
+        <div id="age-win-lose">
+        <!--Age Group Win v Lose Chart Here-->
+        <p class="ex1">The majority of contesants were between the ages of 26 and 35. It is not surprising that this was also the most frequent age group of the Sole Survivors. There has only been 1 contestant older than 46 to win and they were actually in the 56-65 age group. No one between the ages of 46-55 or over 65 have won the show throughout the impressive 40 seasons that it has been running.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <hr>
+        <h3>Age Group Analysis</h3>
+        <hr>
+        <div id="age-win-lose">
+        <!--Age Group Win v Lose Chart Here-->
+        <hr>
+        <p class="ex1">The majority of contesants were between the ages of 26 and 35. It is not surprising that this was also the most frequent age group of the Sole Survivors. There has only been 1 contestant older than 46 to win and they were actually in the 56-65 age group. No one between the ages of 46-55 or over 65 have won the show throughout the impressive 40 seasons that it has been running.</p>
       </div>
     </div>
   </div>
-  <div class = "container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="col-md-8 ">
-          <hr>
-          <h3>Group Analysis</h3>
-            <hr>
-            <!-- <div id="age-win-lose"> -->
-
-            <!--Age Group Win v Lose Chart Here-->
-            <hr>
-            <p class="ex1">The majority of contesants were between the ages of 26 and 35. It is not surprising that this was also the most frequent age group of the Sole Survivors. There has only been 1 contestant older than 46 to win and they were actually in the 56-65 age group. No one between the ages of 46-55 or over 65 have won the show throughout the impressive 40 seasons that it has been running.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--   </div>
   <div class = "container">
     <div class="row">
       <hr>
@@ -183,11 +159,11 @@
           <div id="map">
             <a href="map_survivor.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Map of Survivor Information</a>
           <!--Castaway Home State Chart Here-->
-          </div>
+<!--           </div>
         </div> 
     </div>
   </div>
-
+ --> 
 
 
   <!-- Leaflet JS -->
