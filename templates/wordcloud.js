@@ -133,7 +133,7 @@ var svg = d3.select("#word-cloud").append("svg")
 // Wordcloud features that are different from one word to the other must be here
 var layout = d3.layout.cloud()
   .size([width, height])
-  .words(myWordsNew.map(function(d) { return {text: d.word, size:d.size*.8}; }))
+  .words(myWordsNew.map(function(d) { return {text: d.word, size:d.size*.9}; }))
   .padding(5)        //space between words
   .rotate(function() { return ~~(Math.random() * 2) * 90; })
   .fontSize(function(d) { return d.size; })      // font size of words
@@ -151,7 +151,7 @@ function draw(words) {
       .selectAll("text")
         .data(words)
       .enter().append("text")
-        .style("font-size", function(d) { return d.size*.8; })
+        .style("font-size", function(d) { return d.size*.9; })
         .style("fill", function(d, i) { return fill(i); })
         .attr("text-anchor", "middle")
         .style("font-family", "Impact")
