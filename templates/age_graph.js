@@ -157,7 +157,7 @@ d3.json("castaways.json", function(data) {
     var layout = {
       barmode: 'group',
       autosize: true,
-      title: "Age Groups of Surviors",
+      title: "Age Groups of Survivors",
       width: 1000,
       height: 500
     };
