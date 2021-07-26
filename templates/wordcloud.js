@@ -83,7 +83,7 @@ d3.json('castaways.json', function (response){
      allWords.push(personality)
     }
   
-console.log(allWords);
+// console.log(allWords);
 
 // followed example in: https://stackoverflow.com/questions/48435191/how-do-i-build-an-object-counting-occurrences-in-an-array-in-javascript
 var myWords = {};
@@ -98,7 +98,7 @@ for (var i = 0; i < allWords.length; i++) {
 var myWordsarr = Object.keys(myWords).map(function (key){
   return[key, myWords[key]];
 });
-console.log(myWordsarr);
+// console.log(myWordsarr);
 
 
 
@@ -113,7 +113,7 @@ for (var j = 1; j < myWordsarr.length; j++) {
   console.log(addDict);
   myWordsNew.push(addDict);
 }
-console.log(myWordsNew);
+// console.log(myWordsNew);
 
 
 // set the dimensions and margins of the graph

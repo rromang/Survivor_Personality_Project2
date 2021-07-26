@@ -1,7 +1,7 @@
 // Get data from json 
 // d3.json("/api/castaways.json", function(data)
 d3.json("castaways.json", function(data) {
-    console.log(data);
+    // console.log(data);
    
     // Group data by winners by age group
     var castaway_agegroup_winners = d3.nest()
@@ -11,7 +11,7 @@ d3.json("castaways.json", function(data) {
         }
       })
       .entries(data.castaways)
-      console.log(castaway_agegroup_winners);
+      // console.log(castaway_agegroup_winners);
     
       // group data by 1st voted out by age group
     var castaway_agegroup_losers = d3.nest()
@@ -21,7 +21,7 @@ d3.json("castaways.json", function(data) {
         } 
       })
       .entries(data.castaways)
-      console.log(castaway_agegroup_losers);
+      // console.log(castaway_agegroup_losers);
 
     // group data by winners by personality
     var castaway_personality_winners = d3.nest()
@@ -31,7 +31,7 @@ d3.json("castaways.json", function(data) {
         } 
       })
       .entries(data.castaways)
-      console.log(castaway_personality_winners);
+      // console.log(castaway_personality_winners);
     
     // group data by 1st voted out by personality
       var castaway_personality_losers = d3.nest()
@@ -41,7 +41,7 @@ d3.json("castaways.json", function(data) {
         } 
       })
       .entries(data.castaways)
-      console.log(castaway_personality_losers);
+      // console.log(castaway_personality_losers);
     
     // Group all contestants by age group
     var castaway_agegroup = d3.nest()
@@ -49,7 +49,7 @@ d3.json("castaways.json", function(data) {
         return data.age_group
       })
       .entries(data.castaways)
-      console.log(castaway_agegroup);
+      // console.log(castaway_agegroup);
 
     // Group all contestants by personality type
     var castaway_personality = d3.nest()
@@ -57,7 +57,7 @@ d3.json("castaways.json", function(data) {
         return data.personality_name
       })
       .entries(data.castaways)
-      console.log(castaway_personality);
+      // console.log(castaway_personality);
 
     // Make variables for graphing
     var agegroup_x = [];
@@ -116,18 +116,18 @@ d3.json("castaways.json", function(data) {
     }
   }
     
-    console.log(agegroup_x);
-    console.log(agegroup_y);
-    console.log(personality_x);
-    console.log(personality_y);
-    console.log(winner_agegroup_x);
-    console.log(winner_agegroup_y);
-    console.log(winner_personality_x);
-    console.log(winner_personality_y);
-    console.log(loser_agegroup_x);
-    console.log(loser_agegroup_y);
-    console.log(loser_personality_x);
-    console.log(loser_personality_y);
+    // console.log(agegroup_x);
+    // console.log(agegroup_y);
+    // console.log(personality_x);
+    // console.log(personality_y);
+    // console.log(winner_agegroup_x);
+    // console.log(winner_agegroup_y);
+    // console.log(winner_personality_x);
+    // console.log(winner_personality_y);
+    // console.log(loser_agegroup_x);
+    // console.log(loser_agegroup_y);
+    // console.log(loser_personality_x);
+    // console.log(loser_personality_y);
     
     
 // Age Graph
