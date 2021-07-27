@@ -56,7 +56,7 @@ def home():
     return render_template("index.html")
 
 @app.route("/map_survivor/")
-def home():
+def map():
     return render_template("map_survivor.html")
 
 @app.route("/api/castaways.json")
