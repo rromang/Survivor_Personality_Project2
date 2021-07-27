@@ -55,6 +55,10 @@ if __name__ == "__main__":
 def home():
     return render_template("index.html")
 
+@app.route("/map_survivor/")
+def home():
+    return render_template("map_survivor.html")
+
 @app.route("/api/castaways.json")
 def survivor():
     
